@@ -1,0 +1,37 @@
+{
+  "dependencies": {
+    "apollo-server": "^3.12.0",
+    "graphql": "^16.6.0"
+  },
+  "devDependencies": {
+    "@types/node": "^18.15.11",
+    "prisma": "^4.12.0",
+    "ts-node": "^10.9.1",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^5.0.4"
+  },
+  "name": "bloggy",
+  "description": "An Advanced Blogging system which is a replica of Hashnode.",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start:dev": "nodemon --watch './**/*.ts' --exec ts-node src/index.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MrBomber0x001/Bloggy.git"
+  },
+  "keywords": [
+    "graphql",
+    "prisma",
+    "nodejs",
+    "typescript",
+    "blogging"
+  ],
+  "author": "Yousef Meska (MrBomber0x001)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/MrBomber0x001/Bloggy/issues"
+  },
+  "homepage": "https://github.com/MrBomber0x001/Bloggy#readme"
+}
