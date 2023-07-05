@@ -24,6 +24,3 @@ An Advanced Blogging system which is a replica of Hashnode.
 - [x] Use Prometheus and Grafana to monitor the performance and health of the API.
 - [ ] Use Let's Encrypt to secure the API with SSL/TLS.
 - [ ] Write unit tests for all the endpoints and make sure that all the tests are passing.
-
-docker run -d -e POSTGRES_DB=mydb -e POSTGRES_PASSWORD=testpass123 -e POSTGRES_USER=postgres -p “6500:5432” postgres
-DATABASE_URL=”postgresql://postgres:testpass123@localhost:6500/mydb?schema=public”
