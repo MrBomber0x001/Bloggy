@@ -1,6 +1,16 @@
 version: '3'
 services:
-
+    app:
+        image: bloggly:latest
+        build:
+            context: ../
+            dockerfile: Dockerfile
+        ports:
+            - "9090:9090"
+        depends_on:
+            - db
+        env_file:
+            - .env
     db:
         image: postgres
         restart: always

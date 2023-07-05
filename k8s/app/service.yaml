@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+metadata:
+    labels:
+        app: bloggly-app
+    name: bloggly-app
+    namespace: app-ns
+spec:
+    ports:
+        - port: 9090
+          protocol: TCP
+          targetPort: 9090
+    selector:
+        app: bloggly-app
+status:
+    loadBalancer: {}

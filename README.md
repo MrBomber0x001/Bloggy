@@ -10,8 +10,8 @@ An Advanced Blogging system which is a replica of Hashnode.
 
 ## Logs
 
-- [ ] Setup Github Actions and Push to private Docker repo
-- [ ] Setup Deployment on Rails or Render
+- [x] Setup Jenkins CI to build and push to private docker repo
+- [x] Setup postgres instance deployment on Rails
 - [ ] Use Husky as pre-hook for linting
 - [ ] Setup Database [Prisma] and build a docker container:
   - [ ] create migration for developement and another for production

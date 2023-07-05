@@ -1,0 +1,46 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+    name: postgres
+    namespace: db-ns
+spec:
+    selector:
+        matchLabels:
+            app: postgres
+    strategy:
+        type: Recreate
+    template:
+        metadata:
+            labels:
+                app: postgres
+        spec:
+            containers:
+                - image: postgres:latest
+                  name: postgres
+                  env:
+                      - name: postgres_ROOT_PASSWORD
+                        valueFrom:
+                            secretKeyRef:
+                                key: rootpassword
+                                name: postgres-password
+                      - name: postgres_PASSWORD
+                        valueFrom:
+                            secretKeyRef:
+                                key: password
+                                name: postgres-password
+
+                      - name: postgres_USER
+                        valueFrom:
+                            secretKeyRef:
+                                key: user
+                                name: postgres-password
+                  ports:
+                      - containerPort: 3306
+                        name: postgres
+                  volumeMounts:
+                      - name: postgres-persistent-storage
+                        mountPath: /var/lib/postgres
+            volumes:
+                - name: postgres-persistent-storage
+                  persistentVolumeClaim:
+                      claimName: postgres-pv-claim

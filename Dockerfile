@@ -2,7 +2,8 @@
 FROM node:12-stretch AS build
 WORKDIR /build
 COPY package-lock.json package.json ./
-RUN npm ci
+RUN npm ci --only=production
+RUN npm run build
 COPY . .
 
 # runtime stage
